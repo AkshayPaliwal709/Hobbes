@@ -6,9 +6,20 @@
   </ion-navbar>
 </ion-header>
 
+<ion-toolbar *ngIf="!loggedIn">
+  <button ion-button clear [navPush]="loginPage"> Sign In </button>
+</ion-toolbar>
+
+<ion-toolbar *ngIf="loggedIn" color="secondary">
+    <button ion-button icon-left clear small>
+      <ion-icon name="contact"></ion-icon>
+      {{loggedIn}} Logged in
+    </button>
+    <button ion-button outline small>Sign Out</button> 
+  </ion-toolbar>
+
+
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
 </ion-content>
